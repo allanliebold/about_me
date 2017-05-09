@@ -1,19 +1,30 @@
 header {
-  background: #444;
+  background: #5b6c7f;
   color: #fff;
-  padding: 20px;
+  padding: 10px;
 }
 
 h1 {
+  font: 40px impact, sans-serif;
+  margin-bottom: 10px;
+}
+
+p {
+  font-style: italic;
   font-size: 20px;
   margin-bottom: 20px;
 }
 
-p {
-  margin-bottom: 20px;
+main {
+  background: #999;
+  padding: 50px;
 }
 
 h2 {
   font-size: 20px;
   margin-bottom: 5px;
+}
+
+img {
+  margin: 20px; 
 }
