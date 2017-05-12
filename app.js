@@ -101,6 +101,7 @@ alert('Besides Washington, name one of the three other states in which I have li
 var flag;
 var lived = ['california', 'georgia', 'illinois'];
 var counter = 6;
+var points = 0;
 
 while(counter > 0){
   console.log("Tries left:", counter);
@@ -110,24 +111,31 @@ while(counter > 0){
     alert('No, no, no. Try that again.');
   }
 */
+
+// flag needs to be reset to false at the start of each loop.
+  flag = false;
   for(var i = 0; i < lived.length; i++){
     console.log('Current State:', lived[i]);
     if(state === lived[i]){
       alert('Correct!');
+      lived.splice(i, 1);
       flag = true;
       break;
     }
   }
   if(flag){
-    break;
+    points++;
   } else {
     alert('Nope!');
     counter--;
   }
+  if(points === 3){
+    break;
+  }
 }
 
-if(!flag){
+if(points < 1){
   alert('You lose!');
 } else {
-  alert('You win!');
+  alert('You win! You got ' + points + ' out of 3 right!');
 }
