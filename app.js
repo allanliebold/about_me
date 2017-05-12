@@ -13,38 +13,58 @@ if ((ready === 'y' || ready === 'yes') && (sure === 'y' || sure === 'yes')){
 if ((ready === 'n' || ready === 'no') || (sure === 'n' || sure === 'no')){
   alert('Well, I\'m starting anyway.');
 }
+function question1() {
+  var answer1 = prompt('Question 1: Are you bigger than a bread box? Y/N').toLowerCase();
+  console.log('Answer 1:', answer1);
+  return answer1;
+}
 
-var answer1 = prompt('Question 1: Are you bigger than a bread box? Y/N').toLowerCase();
-console.log('Answer 1:', answer1);
+function question2() {
+  var answer2 = prompt('Question 2: Are you alive? Y/N').toLowerCase();
+  console.log('Answer 2:', answer2);
+  return answer2;
+}
 
-var answer2 = prompt('Question 2: Are you alive? Y/N').toLowerCase();
-console.log('Answer 2:', answer2);
+function question3() {
+  var answer3 = prompt('Question 3: Do you mostly come out at night, mostly? Y/N').toLowerCase();
+  console.log('Answer 3:', answer3);
+  return answer3;
+}
 
-var answer3 = prompt('Question 3: Do you mostly come out at night, mostly? Y/N').toLowerCase();
-console.log('Answer 3:', answer3);
+function question4() {
+  var answer4 = prompt('Question 4: Are you vulnerable to fire? Y/N').toLowerCase();
+  console.log('Answer 4:', answer4);
+  return answer4;
+}
 
-var answer4 = prompt('Question 4: Are you vulnerable to fire? Y/N').toLowerCase();
-console.log('Answer 4:', answer4);
+function question5() {
+  var answer5 = prompt('Question 5: Can you read minds? Y/N').toLowerCase();
+  console.log('Answer 5:', answer5);
+  return answer5;
+}
 
-var answer5 = prompt('Question 5: Can you read minds? Y/N').toLowerCase();
-console.log('Answer 5:', answer5);
+var answerQ1 = question1();
+var answerQ2 = question2();
+var answerQ3 = question3();
+var answerQ4 = question4();
+var answerQ5 = question5();
 
 alert('Okay, I got this. Thinking... thinking...');
 alert('You are a...');
 
-if(answer1 === 'n' || answer1 === 'no'){
+if(answerQ1 === 'n' || answerQ1 === 'no'){
   alert('Teeny tiny...');
 }
-if(answer2 === 'n' || answer2 === 'no'){
+if(answerQ2 === 'n' || answerQ2 === 'no'){
   alert('Undead...');
 }
-if(answer3 === 'y' || answer3 === 'yes'){
+if(answerQ3 === 'y' || answerQ3 === 'yes'){
   alert('Nocturnal...');
 }
-if(answer4 === 'n' || answer4 === 'no'){
+if(answerQ4 === 'n' || answerQ4 === 'no'){
     alert('Fireproof...');
 }
-if(answer5 === 'y' || answer5 === 'yes'){
+if(answerQ5 === 'y' || answerQ5 === 'yes'){
   alert('Telepathic...');
 }
 
@@ -58,6 +78,8 @@ if(result === 'n' || result === 'no'){
 }
 
 alert('Let\'s play another game. Okay, riddle me this...');
+
+function numberGame() {
 
 var guess;
 var lowes = Math.floor(Math.random()*20) + 1;
@@ -91,7 +113,9 @@ while(tries > 0){
 }
 if (guess != lowes){
   alert('Bzzzt! Game over! Now you\'ll never know the exact extent of Robe Lowe\'s robbery prowess!');
+  }
 }
+numberGame();
 
 alert('Time to get serious now.');
 alert('As you may have guessed, I am an entity that exists beyond your limited comprehension.');
@@ -102,6 +126,7 @@ var flag;
 var lived = ['california', 'georgia', 'illinois'];
 var counter = 6;
 
+function stateGame() {
 while(counter > 0){
   console.log("Tries left:", counter);
   var state = prompt('Where have I lived? You have ' + counter + ' guesses.').toLowerCase();
@@ -130,4 +155,6 @@ if(!flag){
   alert('You lose!');
 } else {
   alert('You win!');
+  }
 }
+stateGame();
