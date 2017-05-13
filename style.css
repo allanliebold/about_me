@@ -1,30 +1,116 @@
-header {
+/* Globel styles */
+a {
+  text-decoration: none;
+}
+
+:link, :visited {
+  color: #000;
+}
+
+a:hover {
+  color: #555;
+}
+
+/* App styles */
+
+header{
+  position: fixed;
+  width: 960px;
+  height: 90px;
   background: #5b6c7f;
-  color: #fff;
-  padding: 10px;
 }
 
-h1 {
-  font: 40px impact, sans-serif;
-  margin-bottom: 10px;
+header div{
+  height: 60px;
 }
 
-p {
-  font-style: italic;
-  font-size: 20px;
-  margin-bottom: 20px;
+h1{
+  margin-left: 20px;
+  color: white;
+  font: 50px impact, sans-serif;
 }
 
-main {
+span {
+  margin-left: 16px;
+  font: italic 20px Arial, sans-serif;
+}
+
+nav {
+  height: 30px;
+  width: 960px;
+  font: 20px impact, sans-serif;
+  background: #fff;
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 100px;
+  margin-right: 40px;
+}
+
+
+section{
+  width: 960px;
+  height: 2000px;
+  padding-top:90px;
   background: #999;
-  padding: 50px;
+}
+
+aside{
+  width: 120px;
+  height: 2000px;
+  float:left;
+}
+
+.banner{
+  width: 720px;
+  height: 300px;
+  margin-top: 20px;
+  float: left;
+}
+
+.block{
+  width: 300px;
+  height: 200px;
+  float: left;
+  padding: 30px;
+}
+
+.anchor{
+  display: block;
+  height: 90px;
+  margin-top: -90px;
+  visibility: hidden;
+}
+
+p{
+  margin:20px;
 }
 
 h2 {
-  font-size: 20px;
-  margin-bottom: 5px;
+  font: 30px impact, sans-serif;
+}
+
+section ul{
+  margin: 20px;
+  list-style: square;
+}
+
+section li{
+  margin: 15px;
+  font: 16px arial, sans-serif;
 }
 
 img {
-  margin: 20px;
+  outline: solid 10px #888;
+}
+
+.large {
+  width: 720px;
+  height: 300px;
+}
+
+.small {
+  width: 330px;
+  height: 200px;
 }
