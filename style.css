@@ -13,6 +13,10 @@ a:hover {
 
 /* App styles */
 
+body{
+  background: #888;
+}
+
 header{
   position: fixed;
   width: 960px;
