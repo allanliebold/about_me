@@ -35,6 +35,7 @@ function myGame(){
       var currentAnswer = askQuestion(i);
       if (currentAnswer === 'yes' || currentAnswer === 'y'){
         console.log('choice' + i + ' is true');
+// I initially used this['choice' + i], which worked fine in IE, but not in Chrome. Not sure why, but window does work.
         window['choice' + i] = true;
       } else if (currentAnswer === 'no' || currentAnswer === 'n'){
         console.log('choice' + i + ' is false');

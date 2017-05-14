@@ -14,7 +14,14 @@ a:hover {
 /* App styles */
 
 body{
+  text-align: center;
   background: #888;
+}
+
+#page-wrap{
+  width: 960px;
+  text-align: left;
+  margin: 0 auto;
 }
 
 header{
