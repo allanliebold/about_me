@@ -1,6 +1,6 @@
 'use strict';
 function myGame(){
-  
+
   alert('Time for a guessing game!');
 
   var ready = prompt('Are you ready? Y/N').toLowerCase();
@@ -45,7 +45,7 @@ function myGame(){
       }
   }
 
-  alert('Okay, I got this. Thinking... thinking...');
+  alert('Okay. I got this. Thinking... thinking...');
   alert('You are a...');
 
   if(!choice0){
