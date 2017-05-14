@@ -35,10 +35,10 @@ function myGame(){
       var currentAnswer = askQuestion(i);
       if (currentAnswer === 'yes' || currentAnswer === 'y'){
         console.log('choice' + i + ' is true');
-        this['choice' + i] = true;
+        window['choice' + i] = true;
       } else if (currentAnswer === 'no' || currentAnswer === 'n'){
         console.log('choice' + i + ' is false');
-        this['choice' + i] = false;
+        window['choice'+ i] = false;
       } else {
         alert('I said Y/N!');
         i--;
