@@ -121,7 +121,7 @@ function myGame(){
     alert('Add a point to your score!');
     totalPoints++;
   } else {
-    alert('5: You guessed incorrectly!');
+    alert('You guessed incorrectly!');
   }
   alert('5: And finally... I am enjoying the class!');
   if(choice4){
