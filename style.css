@@ -8,7 +8,7 @@ a {
 }
 
 a:hover {
-  color: #555;
+  color: #999;
 }
 
 /* App styles */
@@ -30,7 +30,7 @@ header div{
 
 h1{
   margin-left: 20px;
-  color: white;
+  color: #fff;
   font: 50px impact, sans-serif;
 }
 
