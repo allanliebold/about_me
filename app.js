@@ -18,34 +18,45 @@ function myGame(){
 
   alert('I bet I can guess what you are in five perfectly chosen questions.');
 
-  var qArr = ['Question 1: Are you bigger than a bread box? Y/N',
-              'Question 2: Are you alive? Y/N',
-              'Question 3: Do you mostly come out at night, mostly? Y/N',
-              'Question 4: Are you vulnerable to fire? Y/N',
-              'Question 5: Can you read minds? Y/N',
-              ];
+  var qArr = [
+              ['Are you bigger than a bread box? Y/N',
+              'Are you alive? Y/N',
+              'Do you mostly come out at night, mostly? Y/N',
+              'Are you vulnerable to fire? Y/N',
+              'Can you read minds? Y/N',],
 
-  function askQuestion(qNumber) {
-    var currentAnswer = prompt(qArr[qNumber]).toLowerCase();
+              ['Question 1: Do I play a musical instrument?',
+              'Question 2: Have I ever traveled to another country?',
+              'Question 3: Was I born in the United States?',
+              'Question 4: Do I like to read?',
+              'Question 5: Am I enjoying this class so far?'
+              ]
+            ];
+
+  function askQuestion(game, qNumber) {
+    var currentAnswer = prompt(qArr[game][qNumber]).toLowerCase();
     console.log('Answer for question ' + qNumber + ' is ' + currentAnswer);
     return currentAnswer;
   }
 
-  for (var i = 0; i < qArr.length; i++){
-      var currentAnswer = askQuestion(i);
-      if (currentAnswer === 'yes' || currentAnswer === 'y'){
-        console.log('choice' + i + ' is true');
-// I initially used this['choice' + i], which worked fine in IE, but not in Chrome. Not sure why, but window does work.
-        window['choice' + i] = true;
-      } else if (currentAnswer === 'no' || currentAnswer === 'n'){
-        console.log('choice' + i + ' is false');
-        window['choice'+ i] = false;
-      } else {
-        alert('I said Y/N!');
-        i--;
-      }
+  function questionGame(game){
+    for (var i = 0; i < qArr[0].length; i++){
+        var currentAnswer = askQuestion(game,i);
+        if (currentAnswer === 'yes' || currentAnswer === 'y'){
+          console.log('choice' + i + ' is true');
+  // I initially used this['choice' + i], which worked fine in IE, but not in Chrome. Not sure why, but window does work.
+          window['choice' + i] = true;
+        } else if (currentAnswer === 'no' || currentAnswer === 'n'){
+          console.log('choice' + i + ' is false');
+          window['choice'+ i] = false;
+        } else {
+          alert('I said Y/N!');
+          i--;
+        }
+    }
   }
 
+  questionGame(0);
   alert('Okay. I got this. Thinking... thinking...');
   alert('You are a...');
 
@@ -70,11 +81,55 @@ function myGame(){
 
   if(result === 'n' || result === 'no'){
     alert('You cheated!');
-  } else {
+  } else if (result === 'y' || result === 'yes'){
     alert('Huzzah!');
+  } else {
+    alert('I don\'t speak potato. Moving on!');
   }
 
-  alert('Let\'s play another game. Okay, riddle me this...');
+  alert('Now it\'s time for you to guess some things about me. From here on out I\'ll be keeping score. Get ready!');
+
+  var totalPoints = 0;
+  questionGame(1);
+
+  alert('Okay, that\'s all of the questions. Let\'s tally up how you did.');
+  alert('1: I don\'t play any instruments. Yet. That I know of.');
+  if(choice0){
+    alert('You got that one wrong.');
+    } else {
+    alert('You were right. 1 point for you!');
+    totalPoints++;
+  }
+
+  alert('2: I have been out of the country, but I\'d like to travel more!');
+  if(choice1){
+    alert('Bingo!');
+    totalPoints++;
+  } else {
+    alert('You got that one wrong.');
+  }
+
+  alert('3: I was born in the Philipines.')
+  if(choice2){
+    alert('You were wrong!');
+  } else {
+    alert('That\'s a point to you.');
+    totalPoints++;
+  }
+  alert('4: I do like to read!');
+  if(choice3){
+    alert('Add a point to your score!');
+    totalPoints++;
+  } else {
+    alert('5: You guessed incorrectly!');
+  }
+  alert('5: And finally... I am enjoying the class!');
+  if(choice4){
+    alert('Point!');
+    totalPoints++;
+  }
+  alert('Your score is now ' + totalPoints + ' out of a possible 5 points thus far.');
+  alert('Onto the next game. Okay, riddle me this...');
 
   var guess;
   var lowes = Math.floor(Math.random()*20) + 1;
@@ -103,7 +158,8 @@ function myGame(){
     } else if (isNaN(guess) || guess === null) {
       alert('Hey, that\'s not a number. Try again.');
     } else if (guess === lowes){
-      alert('Exactly right!');
+      alert('Exactly right! You get a point!');
+      totalPoints++;
       break;
     }
   }
@@ -111,20 +167,19 @@ function myGame(){
   if (guess != lowes)
     alert('Bzzzt! Game over! Now you\'ll never know the exact extent of Robe Lowe\'s robbery prowess!');
 
-  alert('Time to get serious now.');
-  alert('As you may have guessed, I am an entity that exists beyond your limited comprehension.');
-  alert('As such, in order to interact with your kind, I have manifested in no fewer than four of your so-called "united" states of being.');
-  alert('Besides Washington, name one of the three other states in which I have existed. No abbrevs please. And, yes, spelling counts. 3 wrong answers and it\'s game over. Get at least 1 right and you win! Got it? Okay...');
+  alert('You have ' + totalPoints + ' out of 6 points now. Time to get serious.');
+  alert('As you may have guessed, I am an entity that exists beyond your limited comprehension. As such, in order to interact with your kind, I have manifested in no fewer than four of your so-called "united" states of being.');
+  alert('Besides Washington, name one of the three other states in which I have existed. No abbrevs please. And, yes, spelling counts. 3 wrong answers and it\'s game over. Get at least 1 right and I\'ll count it as a win for you! Got it? Okay...');
 
   var correct;
   var doOver;
   var lived = ['california', 'georgia', 'illinois'];
   var counter = 3;
-  var points = 0;
+  var statePoints = 0;
 
   while(counter > 0){
     console.log('Tries left:', counter);
-    console.log('Points: ', points);
+    console.log('States Guessed: ', statePoints);
 
 // reset the correct and doOver flags at the start of each loop
     correct = false;
@@ -148,21 +203,23 @@ function myGame(){
     if(doOver){
       console.log('Do over!');
     } else if(correct){
-      points++;
+      statePoints++;
     } else {
       alert('Nope!');
       counter--;
     }
 
-    if(points === 3){
+    if(statePoints === 3){
       break;
     }
   }
 
-  if(points < 1){
-    alert('You lose!');
+  if(statePoints < 1){
+    alert('You lose! No point for you!');
   } else {
-    alert('You win! You got ' + points + ' out of 3 right!');
-
+    alert('You win! You got ' + statePoints + ' out of 3 right!');
+    totalPoints++;
+    console.log('Total Score: ', totalPoints);
   }
+  alert('Your final score is ' + totalPoints + ' out of 7 points!');
 }
