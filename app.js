@@ -111,39 +111,46 @@ function myGame(){
   alert('Time to get serious now.');
   alert('As you may have guessed, I am an entity that exists beyond your limited comprehension.');
   alert('As such, in order to interact with your kind, I have manifested in no fewer than four of your so-called "united" states of being.');
-  alert('Besides Washington, name one of the three other states in which I have lived. No abbrevs please. And, yes, spelling counts. You get 6 chances to give a correct answer.');
+  alert('Besides Washington, name one of the three other states in which I have existed. No abbrevs please. And, yes, spelling counts. 3 wrong answers and it\'s game over. Get at least 1 right and you win! Got it? Okay...');
 
-  var flag;
+  var correct;
+  var doOver;
   var lived = ['california', 'georgia', 'illinois'];
-  var counter = 6;
+  var counter = 3;
   var points = 0;
 
   while(counter > 0){
-    console.log("Tries left:", counter);
-    var state = prompt('Where have I lived? You have ' + counter + ' guesses.').toLowerCase();
-  /* I want certain answers to make the user guess again without counting as a try.
+    console.log('Tries left:', counter);
+    console.log('Points: ', points);
+
+// reset the correct and doOver flags at the start of each loop
+    correct = false;
+    doOver = false;
+
+    var state = prompt('Where have I lived? You have ' + counter + ' tries left.').toLowerCase();
     if (state.length < 3 || state === 'washington'){
-      alert('No, no, no. Try that again.');
+      alert('No, no, no. Follow the rules!');
+      doOver = true;
     }
-  */
-  // flag needs to be reset to false at the start of each loop.
-    flag = false;
 
     for(var i = 0; i < lived.length; i++){
       console.log('Current State:', lived[i]);
       if(state === lived[i]){
         alert('Correct!');
         lived.splice(i, 1);
-        flag = true;
+        correct = true;
         break;
       }
     }
-    if(flag){
+    if(doOver){
+      console.log('Do over!');
+    } else if(correct){
       points++;
     } else {
       alert('Nope!');
       counter--;
     }
+
     if(points === 3){
       break;
     }
