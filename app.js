@@ -150,7 +150,7 @@ function myGame(){
       alert('You underestimate Mr. Lowe.');
       tries--;
     } else if (guess > 20) {
-      alert('Way, way too high. Rob Lowe is by all accounts a mere mortal after all.');
+      alert('Way, way too high. Rob Lowe is by all accounts a mere mortal after all. (HINT: It\'s between 1 and 20)');
       tries--;
     } else if (guess > lowes) {
       alert('Whoa there. Too much.');
@@ -219,7 +219,15 @@ function myGame(){
   } else {
     alert('You win! You got ' + statePoints + ' out of 3 right!');
     totalPoints++;
-    console.log('Total Score: ', totalPoints);
+
   }
+
+//I have a complicated idea for what I want to do with this. Capitalize the first letters in the state names and concatenate a string to include ', and ' between states and a '.' at the end. So if you missed them all it should say 'You missed California, Georgia, and Illinois.'
+  if(lived.length > 0){
+    alert('You missed: ' + lived);
+  }
+
+  console.log('Total Score: ', totalPoints);
   alert('Your final score is ' + totalPoints + ' out of 7 points!');
+
 }
