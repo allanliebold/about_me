@@ -127,7 +127,10 @@ function myGame(){
   if(choice4){
     alert('Point!');
     totalPoints++;
+  } else {
+    alert('Why would you say no to that?? Anyway...');
   }
+
   alert('Your score is now ' + totalPoints + ' out of a possible 5 points thus far.');
   alert('Onto the next game. Okay, riddle me this...');
 
