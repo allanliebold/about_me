@@ -128,7 +128,7 @@ function myGame(){
     alert('Point!');
     totalPoints++;
   } else {
-    alert('Why would you say no to that?? Anyway...');
+    alert('Why would you say no to that?? Anyway..');
   }
 
   alert('Your score is now ' + totalPoints + ' out of a possible 5 points thus far.');
@@ -225,7 +225,7 @@ function myGame(){
 
   }
 
-//I have a complicated idea for what I want to do with this. Capitalize the first letters in the state names and concatenate a string to include ', and ' between states and a '.' at the end. So if you missed them all it should say 'You missed California, Georgia, and Illinois.'
+//I have a complicated idea for what I want to do with this. Capitalize the first letters in the state names and concatenate a string to include ', and ' between states and a '.' at the end. So if you missed them all it should say 'You missed California, Georgia, and Illinois.' I'll have to use a loop and splicing, splitting, toUpperCase probably. 
   if(lived.length > 0){
     alert('You missed: ' + lived);
   }
