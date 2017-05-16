@@ -69,6 +69,12 @@ function myGame(){
   alert('Okay. I got this. Thinking... thinking...');
   alert('You are a...');
 
+  var choice0;
+  var choice1;
+  var choice2;
+  var choice3;
+  var choice4;
+
 // Checks the variables choice0 - choice 4 for the five questions and displays text depending on the answer.
   if(!choice0){
     alert('Teeny tiny...');
