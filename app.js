@@ -23,19 +23,19 @@ function myGame(){
 // Mult-dimensional array containing all the questions for two guessing games.
   var qArr = [
 // Silly potato guessing game questions
-              ['Are you bigger than a bread box? Y/N',
-              'Are you alive? Y/N',
-              'Do you mostly come out at night, mostly? Y/N',
-              'Are you vulnerable to fire? Y/N',
-              'Can you read minds? Y/N',],
+    ['Are you bigger than a bread box? Y/N',
+      'Are you alive? Y/N',
+      'Do you mostly come out at night, mostly? Y/N',
+      'Are you vulnerable to fire? Y/N',
+      'Can you read minds? Y/N',],
 // About Me guessing game questions
-              ['Question 1: Do I play a musical instrument?',
-              'Question 2: Have I ever traveled to another country?',
-              'Question 3: Was I born in the United States?',
-              'Question 4: Do I like to read?',
-              'Question 5: Am I enjoying this class so far?'
-              ]
-            ];
+    ['Question 1: Do I play a musical instrument?',
+      'Question 2: Have I ever traveled to another country?',
+      'Question 3: Was I born in the United States?',
+      'Question 4: Do I like to read?',
+      'Question 5: Am I enjoying this class so far?'
+    ]
+  ];
 
 // Function to prompt user with the text of the current question. Parameters determine which of the two games we're playing and which question we're currently on. This function is called inside a for loop in the questionGame function
   function askQuestion(game, qNumber) {
@@ -47,20 +47,20 @@ function myGame(){
 // This function uses a for loop to go through the array of questions and calls the askQuestion function for each.
   function questionGame(game){
     for (var i = 0; i < qArr[0].length; i++){
-        var currentAnswer = askQuestion(game,i);
+      var currentAnswer = askQuestion(game,i);
 // if else checks whether the user answers yes or no and creates a numbered choice variable set to either true or false.
-        if (currentAnswer === 'yes' || currentAnswer === 'y'){
-          console.log('choice' + i + ' is true');
+      if (currentAnswer === 'yes' || currentAnswer === 'y'){
+        console.log('choice' + i + ' is true');
 // I initially used this['choice' + i], which worked fine in IE, but not in Chrome. Not sure why, but window does work.
-          window['choice' + i] = true;
-        } else if (currentAnswer === 'no' || currentAnswer === 'n'){
-          console.log('choice' + i + ' is false');
-          window['choice'+ i] = false;
+        window['choice' + i] = true;
+      } else if (currentAnswer === 'no' || currentAnswer === 'n'){
+        console.log('choice' + i + ' is false');
+        window['choice'+ i] = false;
 // If the user enters anything else, i is decremented so the same question can be asked again.
-        } else {
-          alert('I said Y/N!');
-          i--;
-        }
+      } else {
+        alert('I said Y/N!');
+        i--;
+      }
     }
   }
 
@@ -80,7 +80,7 @@ function myGame(){
     alert('Nocturnal...');
   }
   if(!choice3){
-      alert('Fireproof...');
+    alert('Fireproof...');
   }
   if(choice4){
     alert('Telepathic...');
@@ -110,7 +110,7 @@ function myGame(){
   alert('1: I don\'t play any instruments. Yet. That I know of.');
   if(choice0){
     alert('You got that one wrong.');
-    } else {
+  } else {
     alert('You were right. 1 point for you!');
     totalPoints++;
   }
@@ -123,7 +123,7 @@ function myGame(){
     alert('You got that one wrong.');
   }
 
-  alert('3: I was born in the Philipines.')
+  alert('3: I was born in the Philipines.');
   if(choice2){
     alert('You were wrong!');
   } else {
@@ -276,8 +276,7 @@ function myGame(){
     totalPoints++;
 
   }
-
-//I have a complicated idea for what I want to do with this. Capitalize the first letters in the state names and concatenate a string to include ', and ' between states and a '.' at the end. So if you missed them all it should say 'You missed California, Georgia, and Illinois.' I'll have to use a loop and splicing, splitting, toUpperCase probably.
+//I have a complicated idea for what I want to do with this. Capitalize the first letters in the state names and concatenate a string to include ', and ' between states and a '.' at the end. So if you missed them all it should say 'You missed California, Georgia, and Illinois.' I'll have to use a loop and splicing, splitting, and toUpperCase probably.
   if(lived.length > 0){
 // if there are any correct answers left in the lived array, display a message showing the user what those answers are
     alert('You missed: ' + lived);
